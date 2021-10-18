@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Roboto', sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2? family = Roboto: wght @ 100; 400 & display = swap');
+body {
+    background: rgb(12, 201, 241);
+    background: linear-gradient(90deg, rgba(12, 201, 241, 1) 0%, rgba(238, 4, 68, 0.8575805322128851) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 80%;
+    border-radius: 20px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    overflow: hidden;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.48);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.48);
+    box-shadow: 10px 10px 5px 0px rgba(0, 0, 0, 0.48);
+}
+
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin: 30px 10px;
+}
+
+nav {
+    width: 100%;
+    text-align: right;
+}
+
+li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    color: black;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: #e6004e;
+}
+
+.row {
+    width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.column-1 {
+    margin-left: 50px;
+    position: relative;
+}
+
+.column-1::before {
+    content: '';
+    width: 10px;
+    height: 50%;
+    background: linear-gradient(to right, #f10c91, #e6004e);
+    position: absolute;
+    left: -40px;
+    top: 8px;
+}
+
+h2 {
+    font-size: 54px;
+}
+
+h3 {
+    font-size: 30px;
+    color: #201b1b;
+    font-weight: 100;
+    margin: 20px 0;
+}
+
+.column-1 p {
+    font-size: 14;
+    color: #b7b7b7;
+    font-weight: 100;
+}
+
+h4 {
+    font-size: 20px;
+    color: black;
+    margin: 10px 0;
+}
+
+.column-1 button {
+    width: 140px;
+    height: 50px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border: none;
+    background: linear-gradient(to right, #f10c91, #e6004e);
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.8s ease-in-out;
+}
+
+.column-1 button img {
+    width: 30px;
+    display: none;
+}
+
+.column-1 button:hover {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 160px;
+}
+
+.column-1 button:hover img {
+    width: 30px;
+    display: block;
+}
+
+.column-2 {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.column-2 button {
+    background-color: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 2;
+    border: none;
+}
+
+.column-2 button img {
+    height: 45px;
+    width: 45px;
+}
+
+.controller {
+    width: 70%;
+    margin-left: 50px;
+    z-index: 1;
+    /* adicionando a animação do controle */
+    animation: movieController 2s infinite alternate ease-in-out;
+}
+
+.color-box {
+    width: 80%;
+    height: 100%;
+    right: 0;
+    top: 0;
+    border-radius: 20px 0 0 20px;
+    position: absolute;
+    background: rgb(241, 12, 128);
+    background: linear-gradient(90deg, rgba(241, 12, 128, 1) 0%, rgba(230, 50, 0, 1) 100%);
+    transform: translateX(150px);
+}
+
+.redes-sociais {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redes-sociais img {
+    height: 20px;
+    margin: 0 30px;
+}
+
+.menu-icon {
+    width: 30px;
+    display: none;
+}
+
+
+/* Media query */
+
+@media (max-width: 760px) {
+    .container {
+        width: 100vw;
+        height: 100vh;
+        margin-top: 0;
+        border-radius: 0;
+    }
+    .column-2 {
+        bottom: 20px;
+    }
+    .navbar {
+        margin-bottom: 60px;
+    }
+    .row {
+        flex-direction: column-reverse;
+    }
+    #menu-list {
+        position: relative;
+        top: 60px;
+        left: 60px;
+        overflow: hidden;
+        transition: all 0.8s ease-in-out;
+    }
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+        margin: 0 10px;
+    }
+    .nav-li {
+        display: block;
+        margin-top: 5px;
+    }
+}
+
+
+/* animação do controle */
+
+@keyframes movieController {
+    from {
+        transform: translate(-5%, -5%) rotate(-5deg);
+    }
+}
